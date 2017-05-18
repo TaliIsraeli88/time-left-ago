@@ -1,0 +1,8 @@
+/.coveralls.yml
+/.nyc_output
+/coverage
+/lib
+/test/integration/yarn.lock
+node_modules
+npm-debug.log
+yarn-error.log

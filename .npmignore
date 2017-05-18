@@ -1,0 +1,17 @@
+.babelrc
+.editorconfig
+.eslintignore
+.eslintrc
+.gitignore
+.npmignore
+.travis.yml
+/.coveralls.yml
+/.nyc_output
+/coverage
+/test
+/yarn.lock
+node_modules
+npm-debug.log
+yarn-error.log
+
+/src/**/*.test.js

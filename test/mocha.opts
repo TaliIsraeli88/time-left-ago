@@ -1,0 +1,6 @@
+--timeout 1000
+--reporter dot
+--compilers js:babel-core/register
+--require mocha-clean
+--require test/mocha-setup
+--recursive

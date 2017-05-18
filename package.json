@@ -1,0 +1,86 @@
+{
+  "name": "time-left-ago",
+  "description": "Provide time left and time ago",
+  "url": "",
+  "keywords": [
+    "second",
+    "time",
+    "format",
+    "util"
+  ],
+  "author": {
+    "name": "Tali Israeli",
+    "email": "tali180888@gmail.com"
+  },
+  "nyc": {
+    "statements": 95,
+    "branches": 95,
+    "lines": 95,
+    "include": [
+      "src/**/*.js"
+    ],
+    "exclude": [
+      "src/**/*.test.js"
+    ],
+    "cache": false
+  },
+  "main": "index.js",
+  "scripts": {
+    "build": "run-s build:clean build:js",
+    "build:clean": "rimraf lib",
+    "build:js": "babel --ignore \"*.test.js\" -d lib/ src/",
+    "build:travis": "run-s lint coverage:travis build test:integration",
+    "coverage": "run-s coverage:test coverage:report:html",
+    "coverage:check": "nyc check-coverage",
+    "coverage:open": "open-cli coverage/index.html",
+    "coverage:report": "run-s coverage:report:*",
+    "precoverage:report:html": "rimraf coverage",
+    "coverage:report:html": "nyc report --reporter=html",
+    "coverage:report:coveralls": "nyc report --reporter=text-lcov | coveralls",
+    "coverage:test": "nyc mocha \"src/**/*.test.js\"",
+    "coverage:travis": "run-s coverage:test coverage:travis:report coverage:check",
+    "coverage:travis:report": "if-node-version ^6 run-s coverage:report",
+    "lint": "eslint . --ext .js",
+    "lint:fix": "eslint . --ext .js --fix",
+    "prepublish": "in-publish && run-s lint coverage coverage:check build test:integration || not-in-publish",
+    "test": "mocha \"src/**/*.test.js\"",
+    "test:watch": "watch 'mocha \"src/**/*.test.js\" --reporter min' src --ignoreDotFiles"
+  },
+  "dependencies": {
+    "moment": "^2.17.1",
+    "pluralize": "^5.0.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.0",
+    "babel-eslint": "^7.1.1",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-es2015": "^6.24.0",
+    "babel-preset-stage-0": "^6.22.0",
+    "babel-register": "^6.24.0",
+    "chai": "^3.5.0",
+    "chai-as-promised": "^6.0.0",
+    "coveralls": "^2.12.0",
+    "eslint": "^3.16.1",
+    "if-node-version": "^1.1.1",
+    "in-publish": "^2.0.0",
+    "lnfs-cli": "^1.0.1",
+    "mkdirp": "^0.5.1",
+    "mocha": "^3.2.0",
+    "mocha-clean": "^1.0.0",
+    "mocha-lcov-reporter": "^1.0.0",
+    "npm-check": "^5.4.0",
+    "npm-run-all": "^4.0.2",
+    "nyc": "^10.1.2",
+    "open-cli": "^1.0.5",
+    "rimraf": "^2.6.1",
+    "testdouble": "^2.0.3",
+    "testdouble-chai": "^0.5.0",
+    "watch": "^1.0.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "version": "1.0.0",
+  "license": "MIT"
+}
