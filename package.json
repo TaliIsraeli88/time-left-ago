@@ -24,7 +24,7 @@
     ],
     "cache": false
   },
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
     "build": "run-s build:clean build:js",
     "build:clean": "rimraf lib",
@@ -41,7 +41,7 @@
     "coverage:travis:report": "if-node-version ^6 run-s coverage:report",
     "lint": "eslint . --ext .js",
     "lint:fix": "eslint . --ext .js --fix",
-    "prepublish": "in-publish && run-s lint coverage coverage:check build test:integration || not-in-publish",
+    "prepublish": "in-publish && run-s lint coverage coverage:check build || not-in-publish",
     "test": "mocha \"src/**/*.test.js\"",
     "test:watch": "watch 'mocha \"src/**/*.test.js\" --reporter min' src --ignoreDotFiles"
   },
