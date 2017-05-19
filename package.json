@@ -29,7 +29,7 @@
     "build": "run-s build:clean build:js",
     "build:clean": "rimraf lib",
     "build:js": "babel --ignore \"*.test.js\" -d lib/ src/",
-    "build:travis": "run-s lint coverage:travis build test:integration",
+    "build:travis": "run-s lint coverage:travis build",
     "coverage": "run-s coverage:test coverage:report:html",
     "coverage:check": "nyc check-coverage",
     "coverage:open": "open-cli coverage/index.html",

@@ -1,0 +1,9 @@
+language: node_js
+node_js:
+- '4.8'
+- '6.10'
+- '7.7'
+cache: yarn
+notifications:
+  email: false
+script: yarn run build:travis
