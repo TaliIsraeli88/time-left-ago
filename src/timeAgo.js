@@ -3,9 +3,7 @@ import moment from 'moment'
 export default function timeAgo(time) {
   if (!time) return ''
 
-  const _d = moment(time)
-  const offset = (_d.utcOffset()*60*1000*-1)
-  const d = new Date(_d.valueOf()-offset)
+  const d = new Date(moment(time).valueOf())
 
   const cur = new Date()
   const daysAgo = (cur.getTime()-d.getTime())/86400000
