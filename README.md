@@ -28,6 +28,18 @@ const dayString = timeAgo(dayBeforeYesterday)
 // => Friday
 ```
 
+`timeAgoFormatted` returns the specified date bucketed by minutes, hours or days.
+
+```js
+import { timeAgoFormatted } from 'time-left-ago'
+
+const twoDaysAgo = moment(Date.now()).subtract(2, 'days').toString()
+const formatted = timeAgoFormatted(twoDaysAgo) // => '2 DAYS'
+
+const twoHoursAgo = moment(Date.now()).subtract(2, 'hours').toString()
+const formatted = timeAgoFormatted(twoHoursAgo) // => '2 HOURS'
+```
+
 ## License
 
 MIT
