@@ -1,11 +1,11 @@
 import moment from 'moment'
 import pluralize from 'pluralize'
 
-export default function timeLeft(time, ttl) {
-  if (!time) return ''
+export default function timeLeft(time: string | Date | null, ttl: number | null) {
+  if (!time || !ttl) return ''
 
-  const created = new Date(moment(time))
-  const sec = (parseFloat(ttl*60*1000)-(new Date()-created))/1000
+  const created = new Date(moment(time).valueOf()).valueOf()
+  const sec = (ttl*60*1000-(new Date().valueOf()-created))/1000
 
   if (sec < 0) {
     return ''

@@ -1,6 +1,6 @@
-import moment from 'moment'
+import moment, { Moment } from 'moment'
 
-export default function timeAgo(time) {
+export default function timeAgo(time: string | Date | Moment | null): string {
   if (!time) return ''
 
   const d = new Date(moment(time).valueOf())

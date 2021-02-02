@@ -1,4 +1,6 @@
 import moment from 'moment'
+import { expect } from 'chai'
+
 import timeAgo from './timeAgo'
 
 describe('timeAgo', () => {

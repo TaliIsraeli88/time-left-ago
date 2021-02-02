@@ -1,4 +1,6 @@
 import moment from 'moment'
+import { expect } from 'chai'
+
 import timeAgoFormatted from './timeAgoFormatted'
 
 describe('Utility: DateHelpers', () => {

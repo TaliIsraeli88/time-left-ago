@@ -1,3 +1,4 @@
+import { expect } from 'chai'
 import timeLeft from './timeLeft'
 
 describe('timeLeft', () => {
