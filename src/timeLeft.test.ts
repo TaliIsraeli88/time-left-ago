@@ -5,22 +5,22 @@ describe('timeLeft', () => {
   const now = new Date()
 
   it('should return 1 second left when ttl is less than a second', () => {
-    const ttl = 0.9/60
+    const ttl = 0.9 / 60
     expect(timeLeft(now, ttl)).to.equal('1 second left')
   })
 
   it('should return 1 second left if provided ttl that 1 second', () => {
-    const ttl = 1/60
+    const ttl = 1 / 60
     expect(timeLeft(now, ttl)).to.equal('1 second left')
   })
 
   it('should return the number of seconds that left if provided ttl that is smaller than 59 seconds', () => {
-    const ttl = 40/60
+    const ttl = 40 / 60
     expect(timeLeft(now, ttl)).to.equal('40 seconds left')
   })
 
   it('should return 1 minutes left if provided ttl that is between 59 and 60 seconds', () => {
-    const ttl = 59.5/60
+    const ttl = 59.5 / 60
     expect(timeLeft(now, ttl)).to.equal('1 minute left')
   })
 

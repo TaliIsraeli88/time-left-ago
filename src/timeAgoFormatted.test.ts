@@ -24,7 +24,10 @@ describe('timeAgoFormatted', () => {
     })
 
     it('Should format with singular for a delta of less than two days', () => {
-      const dateString = moment(Date.now()).subtract(2, 'days').add(1, 'second').toString()
+      const dateString = moment(Date.now())
+        .subtract(2, 'days')
+        .add(1, 'second')
+        .toString()
       const expected = '1 DAY'
 
       const result = timeAgoFormatted(dateString)
@@ -44,7 +47,10 @@ describe('timeAgoFormatted', () => {
     })
 
     it('Should format with singular for a delta of less than two hours', () => {
-      const dateString = moment(Date.now()).subtract(2, 'hours').add(1, 'second').toString()
+      const dateString = moment(Date.now())
+        .subtract(2, 'hours')
+        .add(1, 'second')
+        .toString()
       const expected = '1 HOUR'
 
       const result = timeAgoFormatted(dateString)
@@ -64,7 +70,10 @@ describe('timeAgoFormatted', () => {
     })
 
     it('Should format correctly for a delta of less than two minutes', () => {
-      const dateString = moment(Date.now()).subtract(2, 'minutes').add(1, 'second').toString()
+      const dateString = moment(Date.now())
+        .subtract(2, 'minutes')
+        .add(1, 'second')
+        .toString()
       const expected = '1 MIN'
 
       const result = timeAgoFormatted(dateString)

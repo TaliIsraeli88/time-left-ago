@@ -1,11 +1,14 @@
 import moment from 'moment'
 import pluralize from 'pluralize'
 
-export default function timeLeft(time: string | Date | null, ttl: number | null) {
+export default function timeLeft(
+  time: string | Date | null,
+  ttl: number | null
+): string {
   if (!time || !ttl) return ''
 
   const created = new Date(moment(time).valueOf()).valueOf()
-  const sec = (ttl*60*1000-(new Date().valueOf()-created))/1000
+  const sec = (ttl * 60 * 1000 - (new Date().valueOf() - created)) / 1000
 
   if (sec < 0) {
     return ''
@@ -14,10 +17,10 @@ export default function timeLeft(time: string | Date | null, ttl: number | null)
     return `${pluralize('second', Math.ceil(sec), true)} left`
   }
   if (sec > 59 && sec < 3540) {
-    return `${pluralize('minute', Math.ceil(sec/60), true)} left`
+    return `${pluralize('minute', Math.ceil(sec / 60), true)} left`
   }
   if (sec >= 3540 && sec < 86399) {
-    return `${pluralize('hour', Math.ceil(sec/3600), true)} left`
+    return `${pluralize('hour', Math.ceil(sec / 3600), true)} left`
   }
-  return `${pluralize('day', Math.ceil(sec/86400), true)} left`
+  return `${pluralize('day', Math.ceil(sec / 86400), true)} left`
 }

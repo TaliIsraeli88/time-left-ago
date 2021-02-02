@@ -1,6 +1,6 @@
 import moment from 'moment'
 
-export default function timeAgoFormatted(t: string) {
+export default function timeAgoFormatted(t: string): string {
   try {
     const time = moment(t)
 

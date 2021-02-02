@@ -16,7 +16,9 @@ describe('timeAgo', () => {
 
   it('should return day of week if provided date is two days ago', () => {
     const dayBeforeYesterday = moment().subtract(2, 'days')
-    expect(timeAgo(dayBeforeYesterday)).to.equal(moment(dayBeforeYesterday).format('dddd'))
+    expect(timeAgo(dayBeforeYesterday)).to.equal(
+      moment(dayBeforeYesterday).format('dddd')
+    )
   })
 
   it('should return formatted date if provided date is more than 6 days ago', () => {
