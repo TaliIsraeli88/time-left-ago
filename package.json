@@ -29,7 +29,8 @@
     "build": "run-s build:clean build:ts",
     "build:clean": "rimraf lib",
     "build:ts": "tsc",
-    "build:travis": "run-s lint coverage:travis build",
+    "build:test": "tsc -p tsconfig.test.json",
+    "build:travis": "run-s lint coverage:travis build:test",
     "coverage": "run-s coverage:test coverage:report:html",
     "coverage:check": "nyc check-coverage",
     "coverage:open": "open-cli coverage/index.html",
@@ -42,7 +43,8 @@
     "lint": "eslint . --ext .ts",
     "lint:fix": "eslint . --ext .ts --fix",
     "prepublish": "in-publish && run-s lint coverage coverage:check build || not-in-publish",
-    "test": "mocha \"lib/**/*.test.js\"",
+    "mocha": "mocha \"lib/**/*.test.js\"",
+    "test": "run-s build:test mocha",
     "test:watch": "watch 'mocha \"lib/**/*.test.js\" --reporter min' src --ignoreDotFiles"
   },
   "dependencies": {
