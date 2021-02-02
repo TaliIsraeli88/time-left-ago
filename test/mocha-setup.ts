@@ -11,6 +11,6 @@ chai.config.showDiff = false
 global.expect = chai.expect
 
 // if any unhandled rejections happen in promises, treat them as fatal errors
-process.on('unhandledRejection', function(err) {
+process.on('unhandledRejection', function (err) {
   throw err
 })
