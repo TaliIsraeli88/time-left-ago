@@ -31,7 +31,7 @@
     "build:ts": "tsc",
     "build:test": "tsc -p tsconfig.test.json",
     "build:travis": "run-s lint coverage:travis build:test",
-    "coverage": "run-s coverage:test coverage:report:html",
+    "coverage": "run-s build:test coverage:test coverage:report:html",
     "coverage:check": "nyc check-coverage",
     "coverage:open": "open-cli coverage/index.html",
     "coverage:report": "run-s coverage:report:*",
