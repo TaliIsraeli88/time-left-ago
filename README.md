@@ -10,6 +10,8 @@ yarn add time-left-ago
 
 ## Example
 
+`timeLeft` returns the specified time that left until the provided ttl in seconds, minutes, hours or days.
+
 ```js
 import { timeLeft } from 'time-left-ago'
 
@@ -17,6 +19,8 @@ const ttl = 40/60
 const timeString = timeLeft(new Date(), ttl)
 // => 40 seconds left
 ```
+
+`timeAgo` returns the specified date that passed since the provided timestamp in time, day or date.
 
 ```js
 import { timeAgo } from 'time-left-ago'
