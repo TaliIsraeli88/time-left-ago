@@ -24,7 +24,7 @@
     ],
     "cache": false
   },
-  "main": "lib/src/index.js",
+  "main": "lib/index.js",
   "scripts": {
     "build": "run-s build:clean build:ts",
     "build:clean": "rimraf lib",
